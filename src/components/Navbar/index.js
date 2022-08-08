@@ -10,8 +10,9 @@ const Navbar = () => {
             </div>
             <nav>
                 <a href="#">Apuntes</a>
-                <a href="#">Utiles</a>
+                <a href="#">Útiles</a>
                 <a href="#">Mochilas y accesorios</a>
+                <a href="#">Calculadoras</a>
                 <CartWidget/>
             </nav>
         </header> 

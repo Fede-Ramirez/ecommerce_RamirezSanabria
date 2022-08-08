@@ -39,6 +39,14 @@ button {
     margin: 0rem 0.5rem 1rem 0.5rem;
 }
 
+.details {
+    background-color: lightcoral;
+}
+
+.details__link:hover {
+    text-decoration: none;
+}
+
 #decrease {
     background-color: red;
 }
@@ -49,4 +57,16 @@ button {
 
 #add {
     background-color: aquamarine;
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 14px 20px 10px -15px rgba(0, 0, 0, 0.25), 
+}
+
+.images {
+    width: 250px;
+    height: 250px;
 }
