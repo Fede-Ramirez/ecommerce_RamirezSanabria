@@ -43,10 +43,6 @@ button {
     background-color: lightcoral;
 }
 
-.details__link:hover {
-    text-decoration: none;
-}
-
 #decrease {
     background-color: red;
 }
@@ -73,8 +69,4 @@ button {
     margin: 1rem 1rem;
     display: flex;
     flex-direction: column;
-}
-
-.add_button {
-    background-color: aqua;
 }

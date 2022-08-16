@@ -10,18 +10,10 @@ const Navbar = () => {
                 <h2 id="tienda_nombre">Filolearning shop</h2>
             </NavLink>
             <nav>
-                <NavLink to="category/apuntes">
-                    <a href="#">Apuntes</a>
-                </NavLink>
-                <NavLink to="category/utiles">
-                    <a href="#">Útiles</a>            
-                </NavLink>
-                <NavLink to="category/accesorios">
-                    <a href="#">Mochilas y accesorios</a>                    
-                </NavLink>
-                <NavLink to="category/calculadoras">
-                    <a href="#">Calculadoras</a>                   
-                </NavLink>
+                <NavLink to="category/apuntes">Apuntes</NavLink>
+                <NavLink to="category/utiles">Útiles</NavLink>
+                <NavLink to="category/accesorios">Mochilas y accesorios</NavLink>
+                <NavLink to="category/calculadoras">Calculadoras</NavLink>
                 <CartWidget/>
             </nav>
         </header> 
