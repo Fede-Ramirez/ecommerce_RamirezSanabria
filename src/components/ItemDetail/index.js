@@ -1,3 +1,5 @@
+import { ItemCount } from "../ItemCount"
+
 const ItemDetail = ({ listProduct }) => {
 
     console.log(listProduct)
@@ -8,7 +10,7 @@ const ItemDetail = ({ listProduct }) => {
             <p>{listProduct.product}</p>
             <p>{listProduct.brand}</p>
             <strong>${listProduct.price}</strong>
-            <button className="add_button">Agregar al carrito</button>
+            <ItemCount initial={1} stock={10} onAdd={() =>{}}/>
         </div>    
     )
 }

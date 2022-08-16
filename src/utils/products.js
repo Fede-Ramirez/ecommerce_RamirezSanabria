@@ -102,7 +102,7 @@ export const products = [
         product: "Mochila Vans",
         price: 7500,
         image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F474x%2Fd0%2Fb5%2F40%2Fd0b5401d5e5af31559b88d6f1f782f79.jpg&f=1&nofb=1",
-        category: "mochilas y accesorios"
+        category: "accesorios"
     },    
     {
         id: 14,
@@ -110,7 +110,7 @@ export const products = [
         product: "Mochila Jansport",
         price: 6000,
         image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffalabella.scene7.com%2Fis%2Fimage%2FFalabellaPE%2F14272113_1%3F%24producto308%24%26wid%3D472%26hei%3D472&f=1&nofb=1",
-        category: "mochilas y accesorios"
+        category: "accesorios"
     },
     {
         id: 15,
@@ -118,6 +118,6 @@ export const products = [
         product: "Mochila escolar",
         price: 5500,
         image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F61JjrcdTNeL._SX466_.jpg&f=1&nofb=1",
-        category: "mochilas y accesorios"
+        category: "accesorios"
     }
 ]

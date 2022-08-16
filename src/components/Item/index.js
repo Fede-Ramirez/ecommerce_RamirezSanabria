@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 const Item = ({ product }) => {
 
   return (
@@ -7,7 +9,9 @@ const Item = ({ product }) => {
       <p>{product.brand}</p>
       <strong>${product.price}</strong>
       <button className="details">
+        <NavLink to={`product/${product.id}`}>
           <a href="#" className="details__link">Ver detalle</a>
+        </NavLink>
       </button>
     </div>
   )
