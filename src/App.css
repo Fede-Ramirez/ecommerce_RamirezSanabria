@@ -59,6 +59,11 @@ button {
     background-color: aquamarine;
 }
 
+#cart {
+    background-color: yellow;
+
+}
+
 #products {
     display: flex;
     flex-direction: column;
