@@ -6,8 +6,10 @@ const Navbar = () => {
     return (
         <header>
             <NavLink to="/" id='tienda'>
-                <img src={logo} alt="logo"/>
-                <h2 id="tienda_nombre">Filolearning shop</h2>
+                <div id="header_logo">
+                    <img src={logo} alt="logo"/>
+                    <h2 id="tienda_nombre">Filolearning shop</h2>
+                </div>
             </NavLink>
             <nav>
                 <NavLink to="category/apuntes">Apuntes</NavLink>

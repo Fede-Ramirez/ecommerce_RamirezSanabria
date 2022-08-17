@@ -11,6 +11,10 @@ header {
     align-items: center;
 }
 
+#header_logo {
+    display: flex;
+}
+
 #tienda {
     display: flex;
 }

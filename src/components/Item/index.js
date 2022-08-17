@@ -8,9 +8,9 @@ const Item = ({ product }) => {
       <p>{product.product}</p>
       <p>{product.brand}</p>
       <strong>${product.price}</strong>
-      <button className="details">
-        <NavLink to={`product/${product.id}`}>Ver detalle</NavLink>
-      </button>
+      <NavLink to={`product/${product.id}`}>
+        <button className="details">Ver detalle</button>
+      </NavLink>
     </div>
   )
 }
