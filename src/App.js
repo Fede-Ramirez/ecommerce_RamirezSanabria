@@ -13,6 +13,7 @@ function App() {
           <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Filolearning!"/>} />
           <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenidos a Filolearning!"/>} />
           <Route path="/product/:id" element={<ItemDetailContainer />} />
+          <Route path="/category/:category/product/:id" element={<ItemDetailContainer />}/>
           <Route path="/cart" element={<Cart/>}/>
         </Routes>
     </BrowserRouter>
