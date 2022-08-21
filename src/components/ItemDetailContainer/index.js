@@ -20,8 +20,6 @@ const ItemDetailContainer = () => {
             })
     }, [])
 
-    console.log(listProduct)
-
     return (
         <>  
             {!loading ? <ItemDetail listProduct={listProduct}/> : <strong>Cargando...</strong>}

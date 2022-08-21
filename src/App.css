@@ -64,6 +64,21 @@ button {
 
 }
 
+#remove {
+    background-color: lightsalmon;
+    width: 5%;
+    height: 5%;
+}
+
+#clean {
+    background-color: darkorange;
+}
+
+#landing {
+    background-color:greenyellow;
+    margin-top: 10px;
+}
+
 #products {
     display: flex;
     flex-direction: column;
@@ -78,4 +93,31 @@ button {
     margin: 1rem 1rem;
     display: flex;
     flex-direction: column;
+}
+
+.contenedor_cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.product_properties {
+    font-weight: bold;
+}
+
+#total_price {
+    font-size: 20px;
+}
+
+.badge {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    text-align: center;
 }
