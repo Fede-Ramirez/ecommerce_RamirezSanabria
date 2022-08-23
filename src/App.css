@@ -79,6 +79,10 @@ button {
     margin-top: 10px;
 }
 
+#buy {
+    background-color: lightgreen;
+}
+
 #products {
     display: flex;
     flex-direction: column;
@@ -117,7 +121,7 @@ button {
     width: 15px;
     height: 15px;
     color: #fff;
-    background-color: red;
+    background-color: blue;
     border-radius: 50%;
     text-align: center;
 }
