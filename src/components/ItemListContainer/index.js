@@ -1,9 +1,9 @@
 import { ItemList } from "../ItemList"
-import { products } from "../../utils/products"
+// import { products } from "../../utils/products"
 // import { customFetch } from "../../utils/customFetch"
 import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../firebase" 
 
 
@@ -12,15 +12,22 @@ const ItemListContainer = ({greeting}) => {
     const [listProducts, setListProducts] = useState([])
     const [loading, setLoading] = useState(true)
     
-    const { category } = useParams()
+    // const { category } = useParams()
+    const { id } = useParams()
+
     
     useEffect(() => {
         
         const productsCollection = collection(db, "products")
+        
+        const filter = query(productsCollection, where("category","==",id))
 
-        const consult = getDocs(productsCollection)
+        console.log(filter)
+
+        const consult = getDocs(filter)
 
         console.log(consult)
+        
 
         consult 
         .then(snapshot => {
@@ -48,7 +55,7 @@ const ItemListContainer = ({greeting}) => {
         //             setListProducts(res)
         //         }
         //     })
-    }, [category])
+    }, [id])
 
     return (
         <>
