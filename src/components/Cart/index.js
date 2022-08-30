@@ -1,5 +1,7 @@
 import { useCartContext } from "../../context/CartContext"
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { db } from "../../firebase" 
+import { collection } from "firebase/firestore"
 
 const Cart = () => {
 

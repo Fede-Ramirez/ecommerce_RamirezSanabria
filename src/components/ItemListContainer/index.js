@@ -3,8 +3,8 @@ import { ItemList } from "../ItemList"
 // import { customFetch } from "../../utils/customFetch"
 import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
-import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../firebase" 
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 
 const ItemListContainer = ({greeting}) => {
@@ -15,35 +15,49 @@ const ItemListContainer = ({greeting}) => {
     // const { category } = useParams()
     const { id } = useParams()
 
-    
     useEffect(() => {
         
         const productsCollection = collection(db, "products")
-        
-        const filter = query(productsCollection, where("category","==",id))
+        if(!id) {
+            const consult = getDocs(productsCollection)
 
-        console.log(filter)
-
-        const consult = getDocs(filter)
-
-        console.log(consult)
-        
-
-        consult 
-        .then(snapshot => {
-            const listProducts = snapshot.docs.map(doc => {
-                return {
-                    ...doc.data(),
-                    id: doc.id
-                }
+            consult 
+            .then(snapshot => {
+                const listProducts = snapshot.docs.map(doc => {
+                    return {
+                        ...doc.data(),
+                        id: doc.id
+                    }
+                })
+                setListProducts(listProducts)
+                setLoading(false)
             })
-            setListProducts(listProducts)
-            setLoading(false)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            .catch(err => {
+                console.log(err)
+            })
+        } else {
+            const filter = query(productsCollection, where("category","==",id))
 
+            console.log(filter)
+
+            const consult = getDocs(filter)
+
+            consult 
+            .then(snapshot => {
+                const listProducts = snapshot.docs.map(doc => {
+                    return {
+                        ...doc.data(),
+                        id: doc.id
+                    }
+                })
+                setListProducts(listProducts)
+                setLoading(false)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+        
         // setLoading(true)
         // // customFetch(products)
         //     .then(res => {
