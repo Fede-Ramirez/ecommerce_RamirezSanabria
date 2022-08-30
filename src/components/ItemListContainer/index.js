@@ -53,8 +53,7 @@ const ItemListContainer = ({greeting}) => {
     return (
         <>
             <h1>{greeting}</h1>
-            {/* {!loading ? <ItemList listProducts={listProducts}/> : <strong>Cargando...</strong>} */}
-            <ItemList listProducts={listProducts}/>
+            {!loading ? <ItemList listProducts={listProducts}/> : <strong>Cargando...</strong>}
         </>
     )
 }
