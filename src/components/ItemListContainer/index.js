@@ -21,6 +21,8 @@ const ItemListContainer = ({greeting}) => {
         if(!category) {
             const consult = getDocs(productsCollection)
 
+            console.log(consult)
+
             consult 
             .then(snapshot => {
                 const listProducts = snapshot.docs.map(doc => {

@@ -26,7 +26,11 @@ const ItemDetailContainer = () => {
 
         consult
         .then((res)=>{
-            setListProduct(res.data())
+            const listProduct = {
+                ...res.data(),
+                id:res.id
+            }
+            setListProduct(listProduct)
             setLoading(false)
         })
         .catch((err) => {

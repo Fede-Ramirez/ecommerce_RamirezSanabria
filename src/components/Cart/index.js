@@ -1,12 +1,40 @@
 import { useCartContext } from "../../context/CartContext"
 import { Link } from 'react-router-dom'
 import { db } from "../../firebase" 
-import { collection } from "firebase/firestore"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
+
 
 const Cart = () => {
-
+    
     const { cartList, totalPrice, removeProduct, cleanCart } = useCartContext()
     console.log(cartList)
+
+    const confirmOrder = () => {
+
+        const order = {
+            items: cartList,
+            total: totalPrice(),
+            buyer: {
+                name: "Federico Ramirez",
+                phone: "123456789",
+                email: "mail@mail.com"
+            },
+            date: serverTimestamp(),
+        }
+        
+        const ordersCollection = collection(db, "orders")
+    
+        const consult = addDoc(ordersCollection, order)
+    
+        consult
+            .then((res)=> {
+                console.log(res.id)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
 
     return (
         <div>
@@ -29,7 +57,7 @@ const Cart = () => {
             <>
                 <strong id="total_price">Total de su compra: ${totalPrice()}</strong>
                 <button id="clean" onClick={cleanCart}>Vaciar carrito</button>
-                <button id="buy">Terminar mi compra</button>    
+                <button id="buy" onClick={confirmOrder}>Terminar mi compra</button>    
             </>}
         </div>
     )
