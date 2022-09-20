@@ -16,24 +16,26 @@ const ItemDetail = ({ listProduct }) => {
     }
 
     return (
-        <Flex justify="center" alignItems="center">
-            <Box m={5}>
-                    <VStack>
-                        <Image src={listProduct.image} alt={listProduct.product} className="images"/>
-                        <Text>{listProduct.product}</Text>
-                        <Text>{listProduct.brand}</Text>
-                        <Text as="b">${listProduct.price}</Text>
-                        {
-                        productAdded ? 
-                        <NavLink to="/cart">
-                            <Button bg="yellow">Ir al carrito</Button>
-                        </NavLink>
-                        :
-                        <ItemCount initial={1} stock={10} onAdd={onAdd}/>
-                        }
-                    </VStack>
-            </Box>    
-        </Flex>
+        <main>
+            <Flex justify="center" alignItems="center">
+                <Box m={5}>
+                        <VStack>
+                            <Image src={listProduct.image} alt={listProduct.product} className="images"/>
+                            <Text>{listProduct.product}</Text>
+                            <Text>{listProduct.brand}</Text>
+                            <Text as="b">${listProduct.price}</Text>
+                            {
+                            productAdded ? 
+                            <NavLink to="/cart">
+                                <Button bg="yellow">Ir al carrito</Button>
+                            </NavLink>
+                            :
+                            <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+                            }
+                        </VStack>
+                </Box>    
+            </Flex>
+        </main>
     )
 }
 
