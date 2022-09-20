@@ -24,12 +24,12 @@ El proyecto se ha realizado a partir de las siguientes tecnologías:
 2. JSX: forma de sintaxis del lenguaje javascript, que combinado con React, permite estructurar en código el uso de los distintos componentes de la librería.
 3. Chakra UI: framework CSS para estilos y maquetado de la aplicación.
 4. Chakra Icons: para agregar iconos que logren un impacto amigable e intuitivo al visualizar la app.
-*React Icons: para agregar principalmente el icono del cart widget, puesto que no se encontraba en los iconos de Chakra.
-5. Firebase: base de datos utilizada para traer los productos y guardar las ordenes de compra de los usuarios.
-6. Create-react-app: utilizado para crear el entorno necesario para el uso de la librería react JS.
-7. React-router-dom: utilizado para crear las rutas necesarias para la navegabilidad de la app.
-8. React-toastify: utilizado para notificar al usuario sobre algunas cuestiones de la app, como errores, notificaciones informativas, productos agregados correctamente, etc.
-9. CSS: Utilizada para dar algunos estilos en particular. 
+5. React Icons: para agregar principalmente el icono del cart widget, puesto que no se encontraba en los iconos de Chakra.
+6. Firebase: base de datos utilizada para traer los productos y guardar las ordenes de compra de los usuarios.
+7. Create-react-app: utilizado para crear el entorno necesario para el uso de la librería react JS.
+8. React-router-dom: utilizado para crear las rutas necesarias para la navegabilidad de la app.
+9. React-toastify: utilizado para notificar al usuario sobre algunas cuestiones de la app, como errores, notificaciones informativas, productos agregados correctamente, etc.
+10. CSS: Utilizada para dar algunos estilos en particular. 
 
 
 # Getting Started with Create React App
