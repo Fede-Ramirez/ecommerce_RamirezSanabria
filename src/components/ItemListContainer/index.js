@@ -1,11 +1,10 @@
 import { ItemList } from "../ItemList"
-// import { products } from "../../utils/products"
-// import { customFetch } from "../../utils/customFetch"
 import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
+import { Button, Flex, Heading} from "@chakra-ui/react"
+import { toast } from "react-toastify"
 import { db } from "../../firebase" 
 import { collection, getDocs, query, where } from "firebase/firestore"
-
 
 const ItemListContainer = ({greeting}) => {
     
@@ -13,15 +12,12 @@ const ItemListContainer = ({greeting}) => {
     const [loading, setLoading] = useState(true)
     
     const { category } = useParams()
-    // const { id } = useParams()
 
     useEffect(() => {
         
         const productsCollection = collection(db, "products")
         if(!category) {
             const consult = getDocs(productsCollection)
-
-            console.log(consult)
 
             consult 
             .then(snapshot => {
@@ -35,7 +31,7 @@ const ItemListContainer = ({greeting}) => {
                 setLoading(false)
             })
             .catch(err => {
-                console.log(err)
+                toast.error("Error al cargar los productos")
             })
         } else {
             const filter = query(productsCollection, where("category","==",category))
@@ -54,28 +50,18 @@ const ItemListContainer = ({greeting}) => {
                 setLoading(false)
             })
             .catch(err => {
-                console.log(err)
+                toast.error("Error al cargar los productos")
             })
         }
-        
-        // setLoading(true)
-        // // customFetch(products)
-        //     .then(res => {
-        //         if (category) {
-        //             setLoading(false)
-        //             setListProducts(res.filter(product => product.category === category))
-        //         } else {
-        //             setLoading(false)
-        //             setListProducts(res)
-        //         }
-        //     })
     }, [category])
 
     return (
-        <>
-            <h1>{greeting}</h1>
-            {!loading ? <ItemList listProducts={listProducts}/> : <strong>Cargando...</strong>}
-        </>
+        <main>
+            <Flex direction="column" justify="center" alignItems="center">
+                <Heading as="h1" m={5}>{greeting}</Heading>
+                {!loading ? <ItemList listProducts={listProducts}/> : <Button isLoading loadingText="Cargando..."></Button>} 
+            </Flex>
+        </main>
     )
 }
 

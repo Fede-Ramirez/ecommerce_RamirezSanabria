@@ -1,17 +1,20 @@
 import { NavLink } from 'react-router-dom'
+import { Box, Text, Button, VStack, Image } from "@chakra-ui/react"
 
 const Item = ({ product }) => {
 
   return (
-    <div id="products">
-      <img src={product.image} alt={product.product} className="images"/>
-      <p>{product.product}</p>
-      <p>{product.brand}</p>
-      <strong>${product.price}</strong>
-      <NavLink to={`product/${product.id}`}>
-        <button className="details">Ver detalle</button>
-      </NavLink>
-    </div>
+            <Box>
+              <VStack>
+                <Image src={product.image} alt={product.product} className="images"/>
+                <Text>{product.product}</Text>
+                <Text>{product.brand}</Text>
+                <Text as="b">${product.price}</Text>
+                <NavLink to={`product/${product.id}`}>
+                  <Button bg="orange">Ver detalle</Button>
+                </NavLink>
+              </VStack>
+            </Box>
   )
 }
 

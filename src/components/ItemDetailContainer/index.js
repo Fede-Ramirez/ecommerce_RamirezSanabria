@@ -1,8 +1,8 @@
 import { useState, useEffect} from "react"
-// import { products } from "../../utils/products"
-// import { customFetch } from "../../utils/customFetch"
 import { ItemDetail } from "../ItemDetail"
 import { useParams } from "react-router-dom"
+import { Button } from "@chakra-ui/react"
+import { toast } from "react-toastify" 
 import { db } from "../../firebase" 
 import { collection, getDoc, doc } from "firebase/firestore"
 
@@ -22,8 +22,6 @@ const ItemDetailContainer = () => {
 
         const consult = getDoc(reference)
 
-        console.log(consult) 
-
         consult
         .then((res)=>{
             const listProduct = {
@@ -34,20 +32,13 @@ const ItemDetailContainer = () => {
             setLoading(false)
         })
         .catch((err) => {
-            console.log(err)
+            toast.error("Error al cargar el producto")
         })
-
-        // setLoading(true)
-        // customFetch(products)
-        //     .then(res =>{
-        //         setLoading(false)
-        //         setListProduct(res.find(item => item.id === parseInt(id)))
-        //     })
     }, [id])
 
     return (
         <>  
-            {!loading ? <ItemDetail listProduct={listProduct}/> : <strong>Cargando...</strong>}
+            {!loading ? <ItemDetail listProduct={listProduct}/> : <Button isLoading loadingText="Cargando..."></Button>}
         </>
     )
 }

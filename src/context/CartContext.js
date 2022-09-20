@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from "react"
+import { toast } from "react-toastify"
 
 const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
@@ -26,9 +27,15 @@ export function CartContextProvider ({ children }) {
         }
     }
 
-    const removeProduct = (id) => setCartList(cartList.filter(product => product.id !== id))
+    const removeProduct = (id) => {
+        setCartList(cartList.filter(product => product.id !== id));
+        toast.warning("Producto eliminado")
+    }
 
-    const cleanCart = () => setCartList([]) 
+    const cleanCart = () => {
+        setCartList([]);
+        toast.warning("Se ha vaciado el carrito")
+    } 
 
     const totalPrice = () => {
         return cartList.reduce((acc, product) => acc += (product.price * product.quantity), 0)

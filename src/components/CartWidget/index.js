@@ -2,6 +2,7 @@ import React from 'react'
 import { FaCartArrowDown } from "react-icons/fa"
 import { NavLink } from 'react-router-dom'
 import { useCartContext } from "../../context/CartContext"
+import { Text } from '@chakra-ui/react'
 
 const CartWidget = () => {
 
@@ -10,7 +11,7 @@ const CartWidget = () => {
     return (
         <NavLink to="/cart"> 
             <FaCartArrowDown/>
-            <p className="badge">{totalQuantity()}</p>
+            <Text className="badge">{totalQuantity()}</Text>
         </NavLink>
     )
 }

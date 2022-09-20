@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Text, Box, Button, VStack, HStack } from '@chakra-ui/react' 
+import { toast } from 'react-toastify'
 
 const ItemCount = ({initial, stock, onAdd}) => {
 
@@ -7,15 +9,22 @@ const ItemCount = ({initial, stock, onAdd}) => {
     const increase = () => count < stock && setCount (count + 1) 
     const decrease = () => count > initial && setCount (count - 1) 
 
-    const handleClick = () => onAdd(count)
+    const handleClick = () => {
+        onAdd(count);
+        toast.success("Producto agregado con éxito")
+    }
 
     return (
-        <div id="contador">
-            <button onClick={decrease} id="decrease">-</button>
-            <p>{count}</p>
-            <button onClick={increase} id="increase">+</button>
-            <button id="add" onClick={handleClick}>Agregar al carrito</button>
-        </div>
+        <Box id="contador">
+            <VStack>
+                <HStack>
+                    <Button onClick={decrease} bg="red" size="xs">-</Button>
+                    <Text>{count}</Text>
+                    <Button onClick={increase} bg="green.300" size="xs">+</Button>
+                </HStack>
+                <Button bg="blue.500" color="white" onClick={handleClick}>Agregar al carrito</Button>
+            </VStack>
+        </Box>
         )
 }
 
